@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agregar Alquiler</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+  <div class="container" style="background-color: lightsteelblue;">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card mt-5"></div>
+        <div class="card-header">
+          <h1>Agregar Alquiler</h1>
+        </div>
+        <div class="card-body">
+          <form action="/rents/add" method="post">
+            <div class="form-group">
+              <label for="rentnumber">Número de alquiler:</label>
+              <input type="text" id="rentnumber" name="rentnumber" required />
+            </div>
+            <div class="form-group">
+              <label for="username">Nombre de usuario:</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+              <label for="platenumber">Placa:</label>
+              <input type="text" id="platenumber" name="platenumber" required />
+            </div>
+            <div class="form-group">
+              <label for="rentdate">Fecha de alquiler:</label>
+              <input type="date" id="rentdate" name="rentdate" required />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Agregar Alquiler
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

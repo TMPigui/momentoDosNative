@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Alquileres</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <div class="container" style="background-color: lightsteelblue;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">RENTAAUTO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/cars">CARROS<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/rents">RENTA</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card mt-5">
+          <div class="card-header">
+            <h1>Agregar Alquiler</h1>
+          </div>
+          <div class="card-body">
+            <form action="/rents/add" method="post">
+              <div class="form-group">
+                <label for="rentnumber">Número de alquiler:</label>
+                <input type="text" id="rentnumber" name="rentnumber" required>
+              </div>
+              <div class="form-group">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
+              </div>
+              <div class="form-group">
+                <label for="platenumber">Placa:</label>
+                <input type="text" id="platenumber" name="platenumber" required>
+              </div>
+              <div class="form-group">
+                <label for="rentdate">Fecha de alquiler:</label>
+                <input type="date" id="rentdate" name="rentdate" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Agregar Alquiler</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="background-color: lightsteelblue;">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card mt-5">
+          <h1>Lista de Alquileres</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Número de alquiler</th>
+                <th>Nombre de usuario</th>
+                <th>Placa</th>
+                <th>Fecha de alquiler</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% rents.forEach(rent=> { %>
+                <tr>
+                  <td>
+                    <%= rent.rentnumber %>
+                  </td>
+                  <td>
+                    <%= rent.username %>
+                  </td>
+                  <td>
+                    <%= rent.platenumber %>
+                  </td>
+                  <td>
+                    <%= rent.rentdate %>
+                  </td>
+                </tr>
+                <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</body>
+
+</html>
